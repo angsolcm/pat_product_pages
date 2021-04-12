@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>Hello, world!</title>
+</head>
+
+<body class="py-5">
+
+  <div class="container">
+
+    <h1 class="mb-4 border-bottom">PAT Product Pages</h1>
+
+    <section class="mb-5">
+
+      <p>One aspect of PAT&#39;s remit is as a central source for product usage stats and trends.</p>
+
+      <p>It&#39;s important to understand, however, that there are vastly different product usage information requirements across the various functions of Angel. For example:</p>
+
+      <ul>
+        <li>Renewals need to identify and prevent accounts which are waning while also identify and utilise the relationships with strong accounts for referrals. This needs to be supported by a robust and accurate account usage measurement system.</li>
+        <li>In making decisions about resourcing it&#39;s important for business analysts to understand the engagement with a specific module or feature.</li>
+        <li>Marketing need to isolate accounts and roles based on complex criteria for communications targeting.</li>
+        <li>In supporting a customer, the support team need to know minutia about an account to help resolve individual issues.</li>
+      </ul>
+
+    </section>
+
+    <section class="mb-5">
+
+      <h2 class="mb-4">Views</h2>
+
+      <p>We can cover the vast majority of use cases for product usage information with four interrelated views:</p>
+
+      <ol>
+        <li><em>Global</em></li>
+        <li><em>Account List</em></li>
+        <li><em>User Account List</em></li>
+        <li><em>Individual Account</em></li>
+      </ol>
+
+      <p>An additional set of <em>Module/Feature</em> views may be necessary for more complex products where module-specific usage is of use.</p>
+
+      <p>Below we outline the standard views we want present in PAT for each product, it&#39;s rationale and use cases. The accompanying images are of current examples for Perspective, but don&#39;t necessarily reflect final designs.</p>
+
+    </section>
+
+    <section class="clearfix py-4 border-top border-bottom">
+
+      <img src="global.png" class="float-end w-50 ms-3 mb-3 border rounded shadow-sm" />
+
+      <h3 class="mb-3">Global</h3>
+
+      <p>The umbrella view of the product and springboard to more specific analysis and lists.</p>
+
+      <p>The page is organised into a series of dynamic panels, each with a specific focus. Each panel is completely customisable depending on need.</p>
+
+      <p>While the visible panels will be product specific we can minimally expect there to be panels about the following topics:</p>
+      <ul>
+        <li>Accounts</li>
+        <li>Users</li>
+        <li>Modules/Features</li>
+        <li>Licences/Opportunities</li>
+      </ul>
+
+      <p>Certain values are links which navigate the user to an automatically filtered version of the <em>Account List</em> or <em>User Account List</em> pages.</p>
+
+    </section>
+
+    <section class="clearfix py-4 border-bottom">
+
+      <img src="account_list.png" class="float-end w-50 ms-3 mb-3 border rounded shadow-sm" />
+
+      <h3 class="mb-3">Account List</h3>
+
+      <p>A filterable and sortable list of all product accounts detailing account features and usage.</p>
+
+      <p>This page also acts as a springboard to the <em>Individual Account</em> page for a clicked school.</p>
+
+      <p>Filtering and sorting on this page would enable someone to isolate groups of schools that meet certain criteria; for mailing list purposes, for example.</p>
+
+      <p>There is also the potential to show summary usage information about the filtered schools.</p>
+
+      <p>Since the amount of information we can want to know about accounts can be many and varied, paired with the limited amount of horizontal space, we are currently prototyping how we can show dynamic panels of information within the table.</p>
+
+      <p>The technical challenge with these pages is engineering the ever-expanding list of filters driven by the query string.</p>
+
+    </section>
+
+    <section class="clearfix py-4 border-bottom">
+
+      <img src="user_account_list.png" class="float-end w-50 ms-3 mb-3 border rounded shadow-sm" />
+
+      <h3 class="mb-3">User Account List</h3>
+
+      <p>In more common parlance, a <em>User Account List</em> page is a &quot;User Finder&quot;.</p>
+
+      <p>On these filterable and sortable pages we describe the features and usage of the individual user account, where appropriate.</p>
+
+      <p>While historically these pages have been used to find user credentials we now need to display further information regarding role, permissions, activity, contact info, and more.</p>
+
+      <p>Again, because these tables can become cluttered with trying to show <em>everything</em> about a user&#39;s account, we will likely switch to a dynamic, panelled view.</p>
+
+      <p>Similar to the <em>Account List</em> page, the technical challenge is engineering an extensible filtration system using the passed in query string parameters.</p>
+
+    </section>
+
+    <section class="clearfix py-4 border-bottom">
+
+      <img src="account.png" class="float-end w-50 ms-3 mb-3 border rounded shadow-sm" />
+
+      <h3 class="mb-3">Individual Account</h3>
+
+      <p>The individual account page is the lowest level generic view we would offer as standard for a product, although for some products it might be useful to supply an individual user account page.</p>
+
+      <p>This page is a particular use to those functions that have contact with individual accounts - namely support and renewals.</p>
+
+      <p>They help identify year-on-year usage changes, discrepancies in implementation, module-specific interactions and engagement, licence information and history, weekly activity information.</p>
+
+      <p>Via query string parameters we&#39;d also make these page visible at appropriate locations within ACT, therefore building once but utilising in multiple locations.</p>
+
+      <p>It&#39;s important to understand we&#39;d make a definitive distinction between showing account product usage and administrating an account. The former would be done on this page and the latter on a separate page or pages.</p>
+
+    </section>
+
+    <section class="py-4 border-bottom">
+
+      <h2 class="mb-3">Development Status</h2>
+
+      <p>For each product and each view we are at varying stages of development. Some pages using the new, consistent styling and being beta trialled in PAT right now. Others are still using very old versions of pages that require varying degrees of refinement. Some plainly don&#39;t exist at all yet.</p>
+      <p>The table below helps describe where these pages are up to for each product:</p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Perspective</th>
+            <th>PSP Lite</th>
+            <th>Observatory</th>
+            <th>Balance</th>
+            <th>Balance Lite</th>
+            <th>Nexus</th>
+            <th>Broadcast</th>
+            <th>Pendulum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Global</strong></td>
+            <td>✔️ <a href='http://support.angelsolutions.co.uk/Perspective/Dashboard.aspx'>Live</a> (beta)</td>
+            <td>🔴 To Do</td>
+            <td>✔️ <a href='http://support.angelsolutions.co.uk/Perspective/Observatory/Dashboard.aspx'>Live</a> (beta)</td>
+            <td>🔨 <a href='http://supporttest.angelsolutions.co.uk/Balance/Dashboard.aspx?db=live'>WIP</a></td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Balance/LiteStats.aspx'>Live</a> (old)</td>
+            <td>🔴 To Do</td>
+            <td>🔴 To Do</td>
+            <td>🔴 To Do</td>
+          </tr>
+          <tr>
+            <td><strong>Account List</strong></td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Perspective/ModuleUsage.aspx'>Live</a> (unfinished)</td>
+            <td>🔴 To Do</td>
+            <td>🔨 <a href='http://lpl-al-cmarriot/LocalPAT/Perspective/Observatory/AccountList/default.aspx?db=LiveSupport'>WIP</a></td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Balance/ModuleUsage.aspx'>Live</a> (unfinished)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Balance/LiteList.aspx?filtered=true&amp;Type=User&amp;Budget=0&amp;Use=OneToFive&amp;Rating=0&amp;Source=0&amp;Role=0&amp;Subject=0&amp;Curr=0&amp;Archived=1&amp;New=0'>Live</a> (needs work)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Nexus/Usage.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Nexus/Broadcast/ModuleUsage.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Nexus/Pendulum/ModuleUsage.aspx'>Live</a> (old)</td>
+          </tr>
+          <tr>
+            <td><strong>User Account List</strong></td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Perspective/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Perspective/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Perspective/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Balance/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Balance/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Nexus/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Nexus/UserFinder.aspx'>Live</a> (old)</td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Nexus/UserFinder.aspx'>Live</a> (old)</td>
+          </tr>
+          <tr>
+            <td><strong>Individual Account</strong></td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Perspective/Profile.aspx?SchoolID=53072'>Live</a> (old)</td>
+            <td>🔴 To Do</td>
+            <td>🔨 <a href='https://angsolcm.github.io/prototype-pat-observatory-account-summary/index.html'>WIP</a></td>
+            <td>⚠️ <a href='http://support.angelsolutions.co.uk/Balance/Profile.aspx?SchoolID=1023'>Live</a> (old)</td>
+            <td>🔴 To Do</td>
+            <td>🔴 To Do</td>
+            <td>🔴 To Do</td>
+            <td>🔴 To Do</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section class="py-4">
+
+      <h2 class="mb-3">Development Priority List</h2>
+
+      <p>Based on perceived need, here are our top 5 views from the table above in descending order of development priority.</p>
+
+      <ol>
+        <li>Observatory - Account List</li>
+        <li>Observatory - Individual Account</li>
+        <li>Balance - Global</li>
+        <li>Pendulum - Global</li>
+        <li>Pendulum - Individual Account</li>
+      </ol>
+
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+
+</html>
